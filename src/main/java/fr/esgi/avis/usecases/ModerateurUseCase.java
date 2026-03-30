@@ -13,5 +13,7 @@ public interface ModerateurUseCase {
 
     ModerateurDtoOut ajouterModerateur(ModerateurDtoIn moderateurDtoIn);
 
-    void supprimerModerateur(Moderateur moderateur);
+    ModerateurDtoOut modifierModerateur(ModerateurDtoIn moderateurDtoIn);
+
+    void supprimerModerateur(Long id);
 }

@@ -16,5 +16,7 @@ public interface AvatarUseCase {
 
     AvatarDtoOut ajouterAvatar(AvatarDtoIn avatarDtoIn);
 
+    AvatarDtoOut modifierAvatar(AvatarDtoIn avatarDtoIn);
+
     void supprimerAvatar(Long id);
 }
