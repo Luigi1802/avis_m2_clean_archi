@@ -13,7 +13,5 @@ public interface UtilisateurUseCase {
 
     Utilisateur recupererUtilisateurParPseudo(String pseudo);
 
-    UtilisateurDtoOut ajouterUtilisateur(UtilisateurDtoIn utilisateurDtoIn);
-
     void supprimerUtilisateur(Long id);
 }

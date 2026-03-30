@@ -1,6 +1,8 @@
 package fr.esgi.avis.usecases;
 
 import fr.esgi.avis.business.Moderateur;
+import fr.esgi.avis.dto.ModerateurDtoIn;
+import fr.esgi.avis.dto.ModerateurDtoOut;
 
 import java.util.List;
 
@@ -13,5 +15,7 @@ public interface ModerateurUseCase {
 
     ModerateurDtoOut ajouterModerateur(ModerateurDtoIn moderateurDtoIn);
 
-    void supprimerModerateur(Moderateur moderateur);
+    ModerateurDtoOut modifierModerateur(ModerateurDtoIn moderateurDtoIn);
+
+    void supprimerModerateur(Long id);
 }
