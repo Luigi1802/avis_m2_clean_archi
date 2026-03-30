@@ -1,6 +1,5 @@
 package fr.esgi.avis.business;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
