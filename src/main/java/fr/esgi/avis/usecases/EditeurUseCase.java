@@ -16,4 +16,8 @@ public interface EditeurUseCase {
     List<Jeu> recupererJeux(Long id);
 
     EditeurDtoOut ajouterEditeur (EditeurDtoIn editeurDtoIn);
+
+    EditeurDtoOut modifierEditeur (EditeurDtoIn editeurDtoIn);
+
+    void supprimerEditeur(Long id);
 }

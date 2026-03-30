@@ -16,4 +16,8 @@ public interface GenreUseCase {
     List<Jeu> recupererJeux(Long id);
 
     GenreDtoOut ajouterGenre (GenreDtoIn genreDtoIn);
+
+    GenreDtoOut modifierGenre (GenreDtoIn genreDtoIn);
+
+    void supprimerGenre(Long id);
 }
