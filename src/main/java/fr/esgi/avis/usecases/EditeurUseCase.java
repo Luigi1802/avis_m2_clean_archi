@@ -2,6 +2,8 @@ package fr.esgi.avis.usecases;
 
 import fr.esgi.avis.business.Editeur;
 import fr.esgi.avis.business.Jeu;
+import fr.esgi.avis.dto.EditeurDtoIn;
+import fr.esgi.avis.dto.EditeurDtoOut;
 
 import java.util.List;
 
@@ -16,4 +18,8 @@ public interface EditeurUseCase {
     List<Jeu> recupererJeux(Long id);
 
     EditeurDtoOut ajouterEditeur (EditeurDtoIn editeurDtoIn);
+
+    EditeurDtoOut modifierEditeur (EditeurDtoIn editeurDtoIn);
+
+    void supprimerEditeur(Long id);
 }
