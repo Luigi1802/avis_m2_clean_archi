@@ -1,6 +1,8 @@
 package fr.esgi.avis.usecases;
 
 import fr.esgi.avis.business.Moderateur;
+import fr.esgi.avis.dto.ModerateurDtoIn;
+import fr.esgi.avis.dto.ModerateurDtoOut;
 
 import java.util.List;
 

@@ -2,6 +2,8 @@ package fr.esgi.avis.usecases;
 
 import fr.esgi.avis.business.Avatar;
 import fr.esgi.avis.business.Joueur;
+import fr.esgi.avis.dto.AvatarDtoIn;
+import fr.esgi.avis.dto.AvatarDtoOut;
 
 import java.util.List;
 

@@ -2,6 +2,8 @@ package fr.esgi.avis.usecases;
 
 import fr.esgi.avis.business.Avatar;
 import fr.esgi.avis.business.Joueur;
+import fr.esgi.avis.dto.JoueurDtoIn;
+import fr.esgi.avis.dto.JoueurDtoOut;
 
 import java.util.List;
 
@@ -13,7 +15,7 @@ public interface JoueurUseCase {
     List<Joueur> recupererJoueurs();
 
     JoueurDtoOut ajouterJoueur(JoueurDtoIn joueurDtoIn);
-    
+
     JoueurDtoOut modifierJoueur(JoueurDtoIn joueurDtoIn);
 
     void supprimerJoueur(Long id);
