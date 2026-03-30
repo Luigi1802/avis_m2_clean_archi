@@ -11,4 +11,6 @@ public interface JeuUseCase {
     Jeu recupererJeu(Long id);
 
     List<Jeu> recupererParNom(String nom);
+
+    JeuDtoOut ajouterJeu (JeuDtoIn jeuDtoIn);
 }
