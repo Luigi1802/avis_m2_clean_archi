@@ -13,7 +13,6 @@ public class AvisMapper {
         avis.setDescription(entity.getDescription());
         avis.setNote(entity.getNote());
         avis.setDateDEnvoi(entity.getDateDEnvoi());
-        // pas de mapping récursif joueur/moderateur ici pour éviter les cycles
         return avis;
     }
 
