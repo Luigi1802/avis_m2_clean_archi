@@ -1,6 +1,8 @@
 package fr.esgi.avis.usecases;
 
 import fr.esgi.avis.business.Jeu;
+import fr.esgi.avis.dto.JeuDtoIn;
+import fr.esgi.avis.dto.JeuDtoOut;
 
 import java.time.LocalDate;
 import java.util.List;
