@@ -12,22 +12,6 @@ import java.util.List;
 /**
  * DTO for {@link Joueur}
  */
-@Value
-public class JoueurDtoOut implements Serializable {
-    Long avatarId;
-    LocalDate dateDeNaissance;
-    List<AvisDto> avis;
-    Long id;
-    String motDePasse;
-    String pseudo;
-    String email;
-
-    /**
-     * DTO for {@link Avis}
-     */
-    @Value
-    public static class AvisDto implements Serializable {
-        Long id;
-        LocalDateTime dateDEnvoi;
-    }
+public record JoueurDtoOut(Long avatarId, LocalDate dateDeNaissance, List<AvisDtoOut> avis, Long id, String motDePasse,
+                           String pseudo, String email) implements Serializable {
 }

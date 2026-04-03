@@ -1,7 +1,6 @@
 package fr.esgi.avis.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import fr.esgi.avis.business.Jeu;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

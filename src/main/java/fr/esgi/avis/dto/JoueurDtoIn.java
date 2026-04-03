@@ -7,25 +7,10 @@ import lombok.Value;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * DTO for {@link Joueur}
  */
-@Value
-public class JoueurDtoIn implements Serializable {
-    Long avatarId;
-    LocalDate dateDeNaissance;
-    String motDePasse;
-    String pseudo;
-    String email;
-
-    /**
-     * DTO for {@link Avis}
-     */
-    @Value
-    public static class AvisDto implements Serializable {
-        Long id;
-        LocalDateTime dateDEnvoi;
-    }
+public record JoueurDtoIn(Long avatarId, LocalDate dateDeNaissance, String motDePasse, String pseudo,
+                          String email) implements Serializable {
 }
