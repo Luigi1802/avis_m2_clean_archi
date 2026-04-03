@@ -8,11 +8,13 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
+import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
+
 /**
  * Mapper pour Modérateur - Respecte SOLID-S (Single Responsibility)
  * Responsabilité unique : convertir ModerateurEntity ↔ ModerateurDtoIn/Out
  */
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = SPRING)
 public interface ModerateurMapper {
 
     @Mapping(target = "id", ignore = true)
