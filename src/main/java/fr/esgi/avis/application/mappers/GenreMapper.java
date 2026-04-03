@@ -20,10 +20,10 @@ public interface GenreMapper {
     @Mapping(target = "id", ignore = true)
     GenreEntity toEntity(GenreDtoIn dto);
 
+    @Mapping(target = "jeuxIds", expression = "java(entity.getJeux() != null ? entity.getJeux().stream().map(j -> j.getId()).collect(java.util.stream.Collectors.toList()) : null)")
     GenreDtoOut toDto(GenreEntity entity);
 
     List<GenreEntity> toEntity(List<GenreDtoIn> dtoList);
 
     List<GenreDtoOut> toDto(List<GenreEntity> entityList);
 }
-

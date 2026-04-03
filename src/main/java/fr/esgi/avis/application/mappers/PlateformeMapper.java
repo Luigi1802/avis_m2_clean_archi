@@ -20,10 +20,10 @@ public interface PlateformeMapper {
     @Mapping(target = "id", ignore = true)
     PlateformeEntity toEntity(PlateformeDtoIn dto);
 
+    @Mapping(target = "jeuxIds", expression = "java(entity.getJeux() != null ? entity.getJeux().stream().map(j -> j.getId()).collect(java.util.stream.Collectors.toList()) : null)")
     PlateformeDtoOut toDto(PlateformeEntity entity);
 
     List<PlateformeEntity> toEntity(List<PlateformeDtoIn> dtoList);
 
     List<PlateformeDtoOut> toDto(List<PlateformeEntity> entityList);
 }
-

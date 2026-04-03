@@ -7,7 +7,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
@@ -24,6 +23,7 @@ public interface JeuMapper {
     @Mapping(target = "editeurId", source = "editeur.id")
     @Mapping(target = "genreId", source = "genre.id")
     @Mapping(target = "classificationId", source = "classification.id")
+    @Mapping(target = "plateformeIds", expression = "java(entity.getPlateformes() != null ? entity.getPlateformes().stream().map(p -> p.getId()).collect(java.util.stream.Collectors.toList()) : null)")
     JeuDtoOut toDto(JeuEntity entity);
 
     List<JeuEntity> toEntity(List<JeuDtoIn> dtoList);

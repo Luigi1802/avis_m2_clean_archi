@@ -20,10 +20,10 @@ public interface ClassificationMapper {
     @Mapping(target = "id", ignore = true)
     ClassificationEntity toEntity(ClassificationDtoIn dto);
 
+    @Mapping(target = "jeuxIds", expression = "java(entity.getJeux() != null ? entity.getJeux().stream().map(j -> j.getId()).collect(java.util.stream.Collectors.toList()) : null)")
     ClassificationDtoOut toDto(ClassificationEntity entity);
 
     List<ClassificationEntity> toEntity(List<ClassificationDtoIn> dtoList);
 
     List<ClassificationDtoOut> toDto(List<ClassificationEntity> entityList);
 }
-
