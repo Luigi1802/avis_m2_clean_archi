@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Implémentation de ClassificationRepository - Respecte SOLID-D (Dependency Inversion)
+ * Implémentation de ClassificationRepository
  */
 @Repository
 @AllArgsConstructor

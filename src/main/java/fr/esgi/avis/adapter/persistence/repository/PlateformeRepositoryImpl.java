@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Implémentation de PlateformeRepository - Respecte SOLID-D (Dependency Inversion)
+ * Implémentation de PlateformeRepository
  */
 @Repository
 @AllArgsConstructor

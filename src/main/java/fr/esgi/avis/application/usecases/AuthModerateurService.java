@@ -11,7 +11,6 @@ import java.util.Optional;
 
 /**
  * Implémentation du use case AuthModerateurUseCase
- * Respecte SOLID-S et SOLID-D
  */
 @Service
 @AllArgsConstructor

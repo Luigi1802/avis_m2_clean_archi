@@ -11,8 +11,7 @@ import java.util.List;
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
 /**
- * Mapper pour Joueur - Respecte SOLID-S (Single Responsibility)
- * Responsabilité unique : convertir JoueurEntity ↔ JoueurDtoIn/Out
+ * Mapper pour Joueur
  */
 @Mapper(componentModel = SPRING)
 public interface JoueurMapper {

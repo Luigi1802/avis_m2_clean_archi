@@ -6,13 +6,12 @@ import fr.esgi.avis.application.dto.out.AvatarDtoOut;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import java.util.List;
+import java.util.List;import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
 /**
- * Mapper pour Avatar - Respecte SOLID-S (Single Responsibility)
- * Responsabilité unique : convertir AvatarEntity ↔ AvatarDtoIn/Out
+ * Mapper pour Avatar
  */
 @Mapper(componentModel = SPRING)
 public interface AvatarMapper {

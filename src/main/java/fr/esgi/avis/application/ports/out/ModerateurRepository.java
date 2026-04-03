@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port OUT - Contrat pour la persistance des Modérateurs
- * Respecte SOLID-D (Dependency Inversion)
  */
 public interface ModerateurRepository {
     List<ModerateurDtoOut> findAll();

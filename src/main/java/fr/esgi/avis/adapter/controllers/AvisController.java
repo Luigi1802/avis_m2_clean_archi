@@ -14,7 +14,6 @@ import java.util.List;
 
 /**
  * Contrôleur REST pour les Avis
- * Respecte SOLID-D : injecte les use cases (ports in), pas les repositories
  */
 @RestController
 @RequestMapping("/api/avis")

@@ -10,9 +10,10 @@ import java.util.List;
 
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
+import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
+
 /**
- * Mapper pour Jeu - Respecte SOLID-S (Single Responsibility)
- * Responsabilité unique : convertir JeuEntity ↔ JeuDtoIn/Out
+ * Mapper pour Jeu
  */
 @Mapper(componentModel = SPRING)
 public interface JeuMapper {

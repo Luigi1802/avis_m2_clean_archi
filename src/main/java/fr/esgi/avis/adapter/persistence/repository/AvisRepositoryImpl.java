@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Implémentation de AvisRepository - Respecte SOLID-D (Dependency Inversion)
+ * Implémentation de AvisRepository
  */
 @Repository
 @AllArgsConstructor

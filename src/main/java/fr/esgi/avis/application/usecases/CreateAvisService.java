@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 /**
  * Implémentation du use case CreateAvisUseCase
- * Respecte SOLID-S et SOLID-D
  */
 @Service
 @AllArgsConstructor

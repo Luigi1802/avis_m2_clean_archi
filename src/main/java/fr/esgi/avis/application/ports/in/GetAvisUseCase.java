@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port IN - Use Case: Récupérer les avis
- * Respecte SOLID-D et SOLID-I
  */
 public interface GetAvisUseCase {
     List<AvisDtoOut> getAllAvis();

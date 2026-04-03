@@ -6,7 +6,6 @@ import java.util.Optional;
 
 /**
  * Port OUT - Contrat pour la persistance des Avatars
- * Respecte SOLID-D (Dependency Inversion) et SOLID-I (Interface Segregation)
  */
 public interface AvatarRepository {
     Optional<AvatarDtoOut> findById(Long id);

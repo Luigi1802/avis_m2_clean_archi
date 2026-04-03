@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port OUT - Contrat pour la persistance des Genres
- * Respecte SOLID-D (Dependency Inversion) et SOLID-I (Interface Segregation)
  */
 public interface GenreRepository {
     List<GenreDtoOut> findAll();

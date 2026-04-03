@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port IN - Use Case: Connexion Joueur
- * Respecte SOLID-D et SOLID-I
  */
 public interface AuthJoueurUseCase {
     Optional<JoueurDtoOut> loginJoueur(String pseudo, String motDePasse);

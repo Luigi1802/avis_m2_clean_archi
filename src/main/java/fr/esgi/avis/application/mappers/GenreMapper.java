@@ -11,8 +11,7 @@ import java.util.List;
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
 /**
- * Mapper pour Genre - Respecte SOLID-S (Single Responsibility)
- * Responsabilité unique : convertir GenreEntity ↔ GenreDtoIn/Out
+ * Mapper pour Genre
  */
 @Mapper(componentModel = SPRING)
 public interface GenreMapper {

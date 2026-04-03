@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 /**
- * Implémentation de AvatarRepository - Respecte SOLID-D (Dependency Inversion)
+ * Implémentation de AvatarRepository
  */
 @Repository
 @AllArgsConstructor

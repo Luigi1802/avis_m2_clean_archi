@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port OUT - Contrat pour la persistance des Avis
- * Respecte SOLID-D (Dependency Inversion) et SOLID-I (Interface Segregation)
  */
 public interface AvisRepository {
     List<AvisDtoOut> findAll();

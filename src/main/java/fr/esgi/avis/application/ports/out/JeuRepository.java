@@ -7,9 +7,6 @@ import java.util.Optional;
 
 /**
  * Port OUT - Contrat pour la persistance des Jeux
- * Dépendance inversée : l'application dépend de cette interface,
- * implémentée dans l'adapter persistence.
- * Respecte SOLID-D (Dependency Inversion)
  */
 public interface JeuRepository {
     List<JeuDtoOut> findAll();
