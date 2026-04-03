@@ -7,6 +7,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
@@ -20,10 +21,12 @@ public interface JeuMapper {
     @Mapping(target = "id", ignore = true)
     JeuEntity toEntity(JeuDtoIn dto);
 
+    @Mapping(target = "editeurId", source = "editeur.id")
+    @Mapping(target = "genreId", source = "genre.id")
+    @Mapping(target = "classificationId", source = "classification.id")
     JeuDtoOut toDto(JeuEntity entity);
 
     List<JeuEntity> toEntity(List<JeuDtoIn> dtoList);
 
     List<JeuDtoOut> toDto(List<JeuEntity> entityList);
 }
-

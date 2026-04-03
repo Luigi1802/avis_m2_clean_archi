@@ -20,10 +20,10 @@ public interface JoueurMapper {
     @Mapping(target = "id", ignore = true)
     JoueurEntity toEntity(JoueurDtoIn dto);
 
+    @Mapping(target = "avatarId", source = "avatar.id")
     JoueurDtoOut toDto(JoueurEntity entity);
 
     List<JoueurEntity> toEntity(List<JoueurDtoIn> dtoList);
 
     List<JoueurDtoOut> toDto(List<JoueurEntity> entityList);
 }
-

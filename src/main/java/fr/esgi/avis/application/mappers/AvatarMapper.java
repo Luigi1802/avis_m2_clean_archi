@@ -6,7 +6,9 @@ import fr.esgi.avis.application.dto.out.AvatarDtoOut;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import javax.swing.*;import java.util.List;import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
+import java.util.List;
+
+import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 
 /**
  * Mapper pour Avatar - Respecte SOLID-S (Single Responsibility)
@@ -18,10 +20,10 @@ public interface AvatarMapper {
     @Mapping(target = "id", ignore = true)
     AvatarEntity toEntity(AvatarDtoIn dto);
 
+    @Mapping(target = "joueurId", source = "joueur.id")
     AvatarDtoOut toDto(AvatarEntity entity);
 
     List<AvatarEntity> toEntity(List<AvatarDtoIn> dtoList);
 
     List<AvatarDtoOut> toDto(List<AvatarEntity> entityList);
 }
-
