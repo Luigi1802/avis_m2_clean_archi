@@ -46,11 +46,11 @@ public class AuthModerateurService implements AuthModerateurUseCase {
 
         // Créer le nouveau ModerateurDtoOut
         ModerateurDtoOut moderateurDtoOut = new ModerateurDtoOut(
+            moderateurDtoIn.numeroDeTelephone(),
             null, // id sera généré par la DB
             moderateurDtoIn.motDePasse(),
             moderateurDtoIn.pseudo(),
-            moderateurDtoIn.email(),
-            moderateurDtoIn.numeroDeTelephone()
+            moderateurDtoIn.email()
         );
 
         return moderateurRepository.save(moderateurDtoOut);

@@ -2,6 +2,7 @@ package fr.esgi.avis.adapter.persistence.repository;
 
 import fr.esgi.avis.adapter.persistence.entity.JoueurEntity;
 import fr.esgi.avis.adapter.persistence.repository.jpa.JoueurJpaRepository;
+import fr.esgi.avis.application.dto.in.JoueurDtoIn;
 import fr.esgi.avis.application.dto.out.JoueurDtoOut;
 import fr.esgi.avis.application.mappers.JoueurMapper;
 import fr.esgi.avis.application.ports.out.JoueurRepository;
@@ -44,12 +45,12 @@ public class JoueurRepositoryImpl implements JoueurRepository {
     @Override
     public JoueurDtoOut save(JoueurDtoOut joueurDtoOut) {
         JoueurEntity entity = joueurMapper.toEntity(
-            new fr.esgi.avis.application.dto.in.JoueurDtoIn(
+            new JoueurDtoIn(
+                joueurDtoOut.avatarId(),
+                joueurDtoOut.dateDeNaissance(),
                 joueurDtoOut.motDePasse(),
                 joueurDtoOut.pseudo(),
-                joueurDtoOut.email(),
-                joueurDtoOut.dateDeNaissance(),
-                joueurDtoOut.avatarId()
+                joueurDtoOut.email()
             )
         );
         if (joueurDtoOut.id() != null) {

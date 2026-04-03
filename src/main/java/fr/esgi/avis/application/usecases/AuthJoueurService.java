@@ -46,12 +46,13 @@ public class AuthJoueurService implements AuthJoueurUseCase {
 
         // Créer le nouveau JoueurDtoOut
         JoueurDtoOut joueurDtoOut = new JoueurDtoOut(
+            joueurDtoIn.avatarId(),
+            joueurDtoIn.dateDeNaissance(),
+            null, // avis initialement vide
             null, // id sera généré par la DB
             joueurDtoIn.motDePasse(),
             joueurDtoIn.pseudo(),
-            joueurDtoIn.email(),
-            joueurDtoIn.dateDeNaissance(),
-            joueurDtoIn.avatarId()
+            joueurDtoIn.email()
         );
 
         return joueurRepository.save(joueurDtoOut);
