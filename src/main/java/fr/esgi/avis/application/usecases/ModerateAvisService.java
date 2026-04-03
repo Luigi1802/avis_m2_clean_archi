@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * Implémentation du use case ModerateAvisUseCase
- * Respecte SOLID-S et SOLID-D
  */
 @Service
 @AllArgsConstructor

@@ -8,11 +8,12 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
+import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
+
 /**
- * Mapper pour Classification - Respecte SOLID-S (Single Responsibility)
- * Responsabilité unique : convertir ClassificationEntity ↔ ClassificationDtoIn/Out
+ * Mapper pour Classification
  */
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = SPRING)
 public interface ClassificationMapper {
 
     @Mapping(target = "id", ignore = true)

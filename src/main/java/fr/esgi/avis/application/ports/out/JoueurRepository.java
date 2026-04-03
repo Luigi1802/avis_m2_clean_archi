@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port OUT - Contrat pour la persistance des Joueurs
- * Respecte SOLID-D (Dependency Inversion)
  */
 public interface JoueurRepository {
     List<JoueurDtoOut> findAll();

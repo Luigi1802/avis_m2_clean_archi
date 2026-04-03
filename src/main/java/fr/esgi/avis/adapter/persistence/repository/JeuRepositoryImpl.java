@@ -12,9 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Implémentation de JeuRepository - Respecte SOLID-D (Dependency Inversion)
- * Dépend de JeuRepository (interface) et non l'inverse.
- * Utilise MapStruct pour la conversion (SOLID-S)
+ * Implémentation de JeuRepository
  */
 @Repository
 @AllArgsConstructor

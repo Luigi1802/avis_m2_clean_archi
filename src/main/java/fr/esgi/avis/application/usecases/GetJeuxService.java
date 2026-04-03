@@ -11,7 +11,6 @@ import java.util.Optional;
 
 /**
  * Implémentation du use case GetJeuxUseCase
- * Respecte SOLID-S (Single Responsibility) et SOLID-D (Dependency Inversion)
  */
 @Service
 @AllArgsConstructor

@@ -8,11 +8,12 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
+import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
+
 /**
- * Mapper pour Avis - Respecte SOLID-S (Single Responsibility)
- * Responsabilité unique : convertir AvisEntity ↔ AvisDtoIn/Out
+ * Mapper pour Avis
  */
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = SPRING)
 public interface AvisMapper {
 
     @Mapping(target = "id", ignore = true)

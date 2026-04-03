@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Implémentation de ModerateurRepository - Respecte SOLID-D (Dependency Inversion)
+ * Implémentation de ModerateurRepository
  */
 @Repository
 @AllArgsConstructor

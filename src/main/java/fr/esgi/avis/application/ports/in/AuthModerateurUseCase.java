@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port IN - Use Case: Connexion Modérateur
- * Respecte SOLID-D et SOLID-I
  */
 public interface AuthModerateurUseCase {
     Optional<ModerateurDtoOut> loginModerateur(String pseudo, String motDePasse);

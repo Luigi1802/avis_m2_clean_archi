@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Implémentation de JoueurRepository - Respecte SOLID-D (Dependency Inversion)
+ * Implémentation de JoueurRepository
  */
 @Repository
 @AllArgsConstructor

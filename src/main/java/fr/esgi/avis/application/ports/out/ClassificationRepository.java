@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port OUT - Contrat pour la persistance des Classifications
- * Respecte SOLID-D (Dependency Inversion) et SOLID-I (Interface Segregation)
  */
 public interface ClassificationRepository {
     List<ClassificationDtoOut> findAll();

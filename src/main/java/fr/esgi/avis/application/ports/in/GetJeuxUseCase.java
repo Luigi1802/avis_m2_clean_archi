@@ -7,7 +7,6 @@ import java.util.Optional;
 
 /**
  * Port IN - Use Case: Récupérer les jeux
- * Respecte SOLID-D et SOLID-I : Interface minimale pour les besoins métier
  */
 public interface GetJeuxUseCase {
     List<JeuDtoOut> getAllJeux();
