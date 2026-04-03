@@ -1,50 +1,34 @@
 package fr.esgi.avis.mapper;
 
-import fr.esgi.avis.business.Genre;
+import fr.esgi.avis.dto.GenreDtoIn;
+import fr.esgi.avis.dto.GenreDtoOut;
 import fr.esgi.avis.entity.GenreEntity;
 
 import java.util.List;
 
 public class GenreMapper {
 
-    public static Genre toBusinessObject(GenreEntity entity) {
-        if (entity == null) return null;
-
-        Genre genre = new Genre();
-        genre.setId(entity.getId());
-        genre.setNom(entity.getNom());
-        genre.setJeux(
-                entity.getJeux() == null ? List.of() :
-                        entity.getJeux().stream()
-                        .map(JeuMapper::toBusinessObjectSansGenre)
-                        .toList()
-        );
-        return genre;
-    }
-
-    public static GenreEntity toEntity(Genre genre) {
-        if (genre == null) return null;
+    // DtoIn → Entity
+    public static GenreEntity toEntity(GenreDtoIn dto) {
+        if (dto == null) return null;
 
         GenreEntity entity = new GenreEntity();
-        entity.setId(genre.getId());
-        entity.setNom(genre.getNom());
-        entity.setJeux(
-                genre.getJeux() == null ? List.of() :
-                        genre.getJeux().stream()
-                        .map(JeuMapper::toEntitySansGenre)
-                        .toList()
-        );
+        entity.setNom(dto.nom());
+
         return entity;
     }
 
-    // Sans jeux pour couper la récursion depuis JeuMapper
-    public static Genre toBusinessObjectSansJeux(GenreEntity entity) {
+    // Entity → DtoOut
+    public static GenreDtoOut toDto(GenreEntity entity) {
         if (entity == null) return null;
 
-        Genre genre = new Genre();
-        genre.setId(entity.getId());
-        genre.setNom(entity.getNom());
-        genre.setJeux(List.of());
-        return genre;
+        return new GenreDtoOut(
+                entity.getId(),
+                entity.getNom(),
+                entity.getJeux() == null ? List.of() :
+                        entity.getJeux().stream()
+                        .map(jeu -> jeu.getId())
+                        .toList()
+        );
     }
 }
