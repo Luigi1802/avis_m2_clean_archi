@@ -1,6 +1,5 @@
 package fr.esgi.avis.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -16,7 +15,6 @@ import java.util.List;
 public class EditeurEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @Column(name = "id", nullable = false)
     private Long id;
 
