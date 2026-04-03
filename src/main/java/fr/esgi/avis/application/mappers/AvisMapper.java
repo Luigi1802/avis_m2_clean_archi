@@ -19,10 +19,12 @@ public interface AvisMapper {
     @Mapping(target = "id", ignore = true)
     AvisEntity toEntity(AvisDtoIn dto);
 
+    @Mapping(target = "jeuId", source = "jeu.id")
+    @Mapping(target = "joueurId", source = "joueur.id")
+    @Mapping(target = "moderateurId", source = "moderateur.id")
     AvisDtoOut toDto(AvisEntity entity);
 
     List<AvisEntity> toEntity(List<AvisDtoIn> dtoList);
 
     List<AvisDtoOut> toDto(List<AvisEntity> entityList);
 }
-

@@ -1,7 +1,6 @@
 package fr.esgi.avis.application.ports.out;
 
 import fr.esgi.avis.application.dto.out.EditeurDtoOut;
-
 import java.util.List;
 import java.util.Optional;
 
