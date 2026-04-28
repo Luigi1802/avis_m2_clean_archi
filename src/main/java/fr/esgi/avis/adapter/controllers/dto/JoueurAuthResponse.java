@@ -12,7 +12,8 @@ public record JoueurAuthResponse(
     String pseudo,
     String email,
     LocalDate dateDeNaissance,
-    Long avatarId
+    Long avatarId,
+    String token
 ) implements Serializable {
 }
 

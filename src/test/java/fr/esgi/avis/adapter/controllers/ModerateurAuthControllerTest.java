@@ -4,6 +4,8 @@ import fr.esgi.avis.adapter.controllers.dto.ModerateurAuthResponse;
 import fr.esgi.avis.application.dto.in.ModerateurDtoIn;
 import fr.esgi.avis.application.dto.out.ModerateurDtoOut;
 import fr.esgi.avis.application.ports.in.AuthModerateurUseCase;
+import fr.esgi.avis.application.security.JwtService;
+import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -25,6 +27,9 @@ class ModerateurAuthControllerTest {
     @InjectMocks
     private ModerateurAuthController moderateurAuthController;
 
+    @Mock
+    private JwtService jwtService;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -42,6 +47,8 @@ class ModerateurAuthControllerTest {
         );
         when(authModerateurUseCase.loginModerateur("ModAdmin", "motDePasse"))
             .thenReturn(Optional.of(moderateurDtoOut));
+
+        when(jwtService.generateToken(anyString(), any())).thenReturn("fake-jwt-token");
 
         // When
         ResponseEntity<?> result = moderateurAuthController.login("ModAdmin", "motDePasse");

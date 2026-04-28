@@ -10,7 +10,8 @@ public record ModerateurAuthResponse(
     Long id,
     String pseudo,
     String email,
-    String numeroDeTelephone
+    String numeroDeTelephone,
+    String token
 ) implements Serializable {
 }
 

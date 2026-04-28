@@ -4,6 +4,8 @@ import fr.esgi.avis.adapter.controllers.dto.JoueurAuthResponse;
 import fr.esgi.avis.application.dto.in.JoueurDtoIn;
 import fr.esgi.avis.application.dto.out.JoueurDtoOut;
 import fr.esgi.avis.application.ports.in.AuthJoueurUseCase;
+import fr.esgi.avis.application.security.JwtService;
+import fr.esgi.avis.application.security.Role;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,42 +21,34 @@ import org.springframework.web.bind.annotation.*;
 public class JoueurAuthController {
 
     private final AuthJoueurUseCase authJoueurUseCase;
+    private final JwtService jwtService;
 
-    /**
-     * Authentifie un joueur
-     * @param pseudo pseudo du joueur
-     * @param motDePasse mot de passe
-     * @return Les informations du joueur sans le mot de passe
-     */
     @PostMapping("/login")
-    public ResponseEntity<JoueurAuthResponse> login(@RequestParam String pseudo, @RequestParam String motDePasse) {
+    public ResponseEntity<JoueurAuthResponse> login(@RequestParam String pseudo,
+                                                    @RequestParam String motDePasse) {
         return authJoueurUseCase.loginJoueur(pseudo, motDePasse)
-            .map(this::filterJoueurResponse)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+                .map(joueur -> filterJoueurResponse(joueur,
+                        jwtService.generateToken(joueur.pseudo(), Role.JOUEUR)))
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
     }
 
-    /**
-     * Enregistre un nouveau joueur
-     * @param joueurDtoIn les données du joueur
-     * @return Les informations du joueur créé sans le mot de passe
-     */
     @PostMapping("/register")
     public ResponseEntity<JoueurAuthResponse> register(@RequestBody JoueurDtoIn joueurDtoIn) {
-        JoueurDtoOut createdJoueur = authJoueurUseCase.registerJoueur(joueurDtoIn);
-        return ResponseEntity.status(HttpStatus.CREATED).body(filterJoueurResponse(createdJoueur));
+        JoueurDtoOut created = authJoueurUseCase.registerJoueur(joueurDtoIn);
+        String token = jwtService.generateToken(created.pseudo(), Role.JOUEUR);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(filterJoueurResponse(created, token));
     }
 
-    /**
-     * Filtre la réponse pour exclure le mot de passe
-     */
-    private JoueurAuthResponse filterJoueurResponse(JoueurDtoOut joueurDtoOut) {
+    private JoueurAuthResponse filterJoueurResponse(JoueurDtoOut joueur, String token) {
         return new JoueurAuthResponse(
-            joueurDtoOut.id(),
-            joueurDtoOut.pseudo(),
-            joueurDtoOut.email(),
-            joueurDtoOut.dateDeNaissance(),
-            joueurDtoOut.avatarId()
+                joueur.id(),
+                joueur.pseudo(),
+                joueur.email(),
+                joueur.dateDeNaissance(),
+                joueur.avatarId(),
+                token
         );
     }
 }

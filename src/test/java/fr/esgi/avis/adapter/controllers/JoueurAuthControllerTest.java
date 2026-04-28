@@ -3,6 +3,8 @@ package fr.esgi.avis.adapter.controllers;
 import fr.esgi.avis.application.dto.in.JoueurDtoIn;
 import fr.esgi.avis.application.dto.out.JoueurDtoOut;
 import fr.esgi.avis.application.ports.in.AuthJoueurUseCase;
+import fr.esgi.avis.application.security.JwtService;
+import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -26,6 +28,9 @@ class JoueurAuthControllerTest {
     @InjectMocks
     private JoueurAuthController joueurAuthController;
 
+    @Mock
+    private JwtService jwtService;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -45,6 +50,8 @@ class JoueurAuthControllerTest {
         );
         when(authJoueurUseCase.loginJoueur("AliceGamer", "motDePasse"))
             .thenReturn(Optional.of(joueurDtoOut));
+
+        when(jwtService.generateToken(anyString(), any())).thenReturn("fake-jwt-token");
 
         // When
         ResponseEntity<?> result = joueurAuthController.login("AliceGamer", "motDePasse");
