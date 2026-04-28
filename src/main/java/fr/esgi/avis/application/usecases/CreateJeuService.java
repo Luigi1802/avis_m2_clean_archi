@@ -18,7 +18,6 @@ public class CreateJeuService implements CreateJeuUseCase {
 
     @Override
     public JeuDtoOut createJeu(JeuDtoIn jeuDtoIn) {
-        // Validation métier à ajouter si nécessaire
         // Créer un JeuDtoOut avec les données du JeuDtoIn
         JeuDtoOut jeuDtoOut = new JeuDtoOut(
             jeuDtoIn.plateformeIds(),
