@@ -1,4 +1,4 @@
-# Projet Avis — Clean Architecture
+# Dossier architectural - Projet avis (Clean architecture)
 
 > Application de gestion d'avis de jeux vidéo développée avec **Spring Boot 4** en respectant les principes de **Clean Architecture** (Uncle Bob).
 
